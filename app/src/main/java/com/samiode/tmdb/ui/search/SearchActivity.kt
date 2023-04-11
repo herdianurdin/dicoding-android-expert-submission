@@ -8,14 +8,14 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.appcompat.widget.SearchView
 import com.samiode.tmdb.R
-import com.samiode.tmdb.adapter.MovieVerticalAdapter
+import com.samiode.core.adapter.MovieVerticalAdapter
 import com.samiode.tmdb.databinding.ActivitySearchBinding
-import com.samiode.tmdb.domain.model.Movie
+import com.samiode.core.domain.model.Movie
 import com.samiode.tmdb.ui.detail.DetailActivity
 import com.samiode.tmdb.ui.detail.DetailActivity.Companion.EXTRA_DETAIL
-import com.samiode.tmdb.utils.AdapterExtension.setClickCallback
-import com.samiode.tmdb.utils.ViewBindingUtils.viewBinding
-import com.samiode.tmdb.utils.ViewExtension.setVerticalMovieView
+import com.samiode.core.utils.AdapterExtension.setClickCallback
+import com.samiode.core.utils.ViewBindingUtils.viewBinding
+import com.samiode.core.utils.ViewExtension.setVerticalMovieView
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

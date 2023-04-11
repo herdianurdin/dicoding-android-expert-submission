@@ -8,9 +8,9 @@ import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.os.ConfigurationCompat
 import com.samiode.tmdb.R
-import com.samiode.tmdb.adapter.MovieHorizontalAdapter
+import com.samiode.core.adapter.MovieHorizontalAdapter
 import com.samiode.tmdb.databinding.ActivityMainBinding
-import com.samiode.tmdb.domain.model.Movie
+import com.samiode.core.domain.model.Movie
 import com.samiode.tmdb.ui.category.CategoryActivity
 import com.samiode.tmdb.ui.category.CategoryActivity.Companion.CATEGORY_POPULAR
 import com.samiode.tmdb.ui.category.CategoryActivity.Companion.CATEGORY_TRENDING
@@ -18,15 +18,14 @@ import com.samiode.tmdb.ui.category.CategoryActivity.Companion.CATEGORY_UPCOMING
 import com.samiode.tmdb.ui.category.CategoryActivity.Companion.EXTRA_CATEGORY
 import com.samiode.tmdb.ui.detail.DetailActivity
 import com.samiode.tmdb.ui.detail.DetailActivity.Companion.EXTRA_DETAIL
-import com.samiode.tmdb.ui.favorite.FavoriteActivity
 import com.samiode.tmdb.ui.search.SearchActivity
-import com.samiode.tmdb.utils.AdapterExtension.setClickCallback
-import com.samiode.tmdb.utils.StringUtils.getBackdropImageUrl
-import com.samiode.tmdb.utils.ViewBindingUtils.viewBinding
-import com.samiode.tmdb.utils.ViewExtension.setAvailability
-import com.samiode.tmdb.utils.ViewExtension.setHorizontalMovieView
-import com.samiode.tmdb.utils.ViewExtension.setImageFromUrl
-import com.samiode.tmdb.utils.ViewExtension.setVisible
+import com.samiode.core.utils.AdapterExtension.setClickCallback
+import com.samiode.core.utils.StringUtils.getBackdropImageUrl
+import com.samiode.core.utils.ViewBindingUtils.viewBinding
+import com.samiode.core.utils.ViewExtension.setAvailability
+import com.samiode.core.utils.ViewExtension.setHorizontalMovieView
+import com.samiode.core.utils.ViewExtension.setImageFromUrl
+import com.samiode.core.utils.ViewExtension.setVisible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -60,7 +59,9 @@ class MainActivity : AppCompatActivity() {
                 true
             }
             R.id.btn_favorite -> {
-                Intent(this, FavoriteActivity::class.java).also { startActivity(it) }
+                Intent(
+                    this, Class.forName("com.samiode.tmbd.favorite.FavoriteActivity")
+                ).also { startActivity(it) }
                 true
             }
             else -> super.onOptionsItemSelected(item)

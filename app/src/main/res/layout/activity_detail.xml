@@ -207,7 +207,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_related_movies"
+                android:id="@+id/cl_recommendation_movies"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -215,11 +215,11 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cl_cast">
                 <TextView
-                    android:id="@+id/tv_title_related_movies"
+                    android:id="@+id/tv_title_recommendation_movies"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
-                    android:text="@string/related_movies"
+                    android:text="@string/recommendation"
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:textColor="@color/dracula"
@@ -227,7 +227,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_related_movies"
+                    android:id="@+id/rv_recommendation_movies"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingStart="16dp"
@@ -241,17 +241,17 @@
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_title_related_movies"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_recommendation_movies"
                     tools:itemCount="5"
                     tools:listitem="@layout/card_movie_horizontal"/>
 
                 <com.facebook.shimmer.ShimmerFrameLayout
-                    android:id="@+id/sfl_related_movies"
+                    android:id="@+id/sfl_recommendation_movies"
                     android:layout_width="match_parent"
                     android:layout_height="240dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_title_related_movies"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_recommendation_movies"
                     app:layout_constraintBottom_toBottomOf="parent">
                     <View
                         android:layout_width="match_parent"

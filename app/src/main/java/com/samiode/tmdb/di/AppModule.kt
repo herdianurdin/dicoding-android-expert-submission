@@ -1,7 +1,7 @@
 package com.samiode.tmdb.di
 
-import com.samiode.tmdb.domain.usecase.MovieInteractor
-import com.samiode.tmdb.domain.usecase.MovieUseCase
+import com.samiode.core.domain.usecase.MovieInteractor
+import com.samiode.core.domain.usecase.MovieUseCase
 import dagger.Binds
 import dagger.Module
 import dagger.hilt.InstallIn

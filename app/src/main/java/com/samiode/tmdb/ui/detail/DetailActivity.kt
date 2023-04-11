@@ -9,20 +9,20 @@ import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import com.samiode.tmdb.R
-import com.samiode.tmdb.adapter.CastAdapter
-import com.samiode.tmdb.adapter.MovieHorizontalAdapter
+import com.samiode.core.adapter.CastAdapter
+import com.samiode.core.adapter.MovieHorizontalAdapter
 import com.samiode.tmdb.databinding.ActivityDetailBinding
-import com.samiode.tmdb.domain.model.Movie
-import com.samiode.tmdb.utils.AdapterExtension.setClickCallback
-import com.samiode.tmdb.utils.StringUtils.getBackdropImageUrl
-import com.samiode.tmdb.utils.StringUtils.getPosterImageUrl
-import com.samiode.tmdb.utils.ViewBindingUtils.viewBinding
-import com.samiode.tmdb.utils.ViewExtension.parseMovieRating
-import com.samiode.tmdb.utils.ViewExtension.setAvailability
-import com.samiode.tmdb.utils.ViewExtension.setCastMovieView
-import com.samiode.tmdb.utils.ViewExtension.setHorizontalMovieView
-import com.samiode.tmdb.utils.ViewExtension.setImageFromUrl
-import com.samiode.tmdb.utils.ViewExtension.setVisible
+import com.samiode.core.domain.model.Movie
+import com.samiode.core.utils.AdapterExtension.setClickCallback
+import com.samiode.core.utils.StringUtils.getBackdropImageUrl
+import com.samiode.core.utils.StringUtils.getPosterImageUrl
+import com.samiode.core.utils.ViewBindingUtils.viewBinding
+import com.samiode.core.utils.ViewExtension.parseMovieRating
+import com.samiode.core.utils.ViewExtension.setAvailability
+import com.samiode.core.utils.ViewExtension.setCastMovieView
+import com.samiode.core.utils.ViewExtension.setHorizontalMovieView
+import com.samiode.core.utils.ViewExtension.setImageFromUrl
+import com.samiode.core.utils.ViewExtension.setVisible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint
@@ -31,7 +31,7 @@ class DetailActivity : AppCompatActivity() {
     private val detailViewModel: DetailViewModel by viewModels()
 
     private val castAdapter = CastAdapter()
-    private val relatedMovieAdapter = MovieHorizontalAdapter()
+    private val recommendationMovieAdapter = MovieHorizontalAdapter()
 
     private lateinit var movie: Movie
     private var isFavorite: Boolean = false
@@ -99,15 +99,15 @@ class DetailActivity : AppCompatActivity() {
     }
 
     private fun setRelatedMovies() {
-        relatedMovieAdapter.setClickCallback { goToDetail(it) }
-        binding.rvRelatedMovies.setHorizontalMovieView(relatedMovieAdapter)
+        recommendationMovieAdapter.setClickCallback { goToDetail(it) }
+        binding.rvRecommendationMovies.setHorizontalMovieView(recommendationMovieAdapter)
 
-        detailViewModel.getRelatedMovies(movie.id).observe(this) { result ->
+        detailViewModel.getRecommendationMovies(movie.id).observe(this) { result ->
             result.onSuccess { movies ->
-                binding.sflRelatedMovies.setAvailability(false)
+                binding.sflRecommendationMovies.setAvailability(false)
 
-                if (movies.isNotEmpty()) relatedMovieAdapter.submitList(movies)
-                else binding.clRelatedMovies.setVisible(false)
+                if (movies.isNotEmpty()) recommendationMovieAdapter.submitList(movies)
+                else binding.clRecommendationMovies.setVisible(false)
             }
             result.onFailure { showErrorOccurred() }
         }
