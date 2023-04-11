@@ -1,0 +1,21 @@
+<resources>
+    <string name="app_name">TMDB</string>
+    <string name="welcome">Welcome</string>
+    <string name="caption">Millions of movies, TV shows and people to discover. Explore now.</string>
+    <string name="trending">Trending</string>
+    <string name="upcoming">Upcoming</string>
+    <string name="popular">Popular</string>
+    <string name="overview">Overview</string>
+    <string name="cast">Cast</string>
+    <string name="related_movies">Related Movies</string>
+    <string name="search">Search</string>
+    <string name="search_hint">Search movie…</string>
+    <string name="favorite">Favorite</string>
+    <string name="overview_empty">We don\'t have an overview for this movie yet. Help us add them.</string>
+    <string name="message_error_no_data">There is no data…</string>
+    <string name="message_error_occurred">An error occurred.</string>
+    <string name="toast_error_occurred">Error occurred</string>
+    <string name="search_not_found">The movie you are looking for was not found…</string>
+    <string name="see_more">See more</string>
+    <string name="retry">Retry</string>
+</resources>
