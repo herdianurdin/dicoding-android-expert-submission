@@ -6,15 +6,15 @@ import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.core.os.ConfigurationCompat
 import com.samiode.tmdb.R
-import com.samiode.tmdb.adapter.MovieVerticalAdapter
+import com.samiode.core.adapter.MovieVerticalAdapter
 import com.samiode.tmdb.databinding.ActivityCategoryBinding
-import com.samiode.tmdb.domain.model.Movie
+import com.samiode.core.domain.model.Movie
 import com.samiode.tmdb.ui.detail.DetailActivity
-import com.samiode.tmdb.utils.AdapterExtension.setClickCallback
-import com.samiode.tmdb.utils.ViewBindingUtils.viewBinding
-import com.samiode.tmdb.utils.ViewExtension.setAvailability
-import com.samiode.tmdb.utils.ViewExtension.setVerticalMovieView
-import com.samiode.tmdb.utils.ViewExtension.setVisible
+import com.samiode.core.utils.AdapterExtension.setClickCallback
+import com.samiode.core.utils.ViewBindingUtils.viewBinding
+import com.samiode.core.utils.ViewExtension.setAvailability
+import com.samiode.core.utils.ViewExtension.setVerticalMovieView
+import com.samiode.core.utils.ViewExtension.setVisible
 import dagger.hilt.android.AndroidEntryPoint
 
 @AndroidEntryPoint

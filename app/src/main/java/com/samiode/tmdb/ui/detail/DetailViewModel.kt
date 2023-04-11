@@ -4,9 +4,9 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
 import androidx.lifecycle.viewModelScope
-import com.samiode.tmdb.domain.model.Cast
-import com.samiode.tmdb.domain.model.Movie
-import com.samiode.tmdb.domain.usecase.MovieUseCase
+import com.samiode.core.domain.model.Cast
+import com.samiode.core.domain.model.Movie
+import com.samiode.core.domain.usecase.MovieUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
@@ -18,8 +18,8 @@ class DetailViewModel @Inject constructor(private val movieUseCase: MovieUseCase
     fun getMovieCasts(id: Int): LiveData<Result<List<Cast>>> =
         movieUseCase.getMovieCasts(id).asLiveData()
 
-    fun getRelatedMovies(id: Int): LiveData<Result<List<Movie>>> =
-        movieUseCase.getRelatedMovies(id).asLiveData()
+    fun getRecommendationMovies(id: Int): LiveData<Result<List<Movie>>> =
+        movieUseCase.getRecommendationMovies(id).asLiveData()
 
     fun isFavoriteMovie(id: Int): LiveData<Boolean> =
         movieUseCase.isFavoriteMovie(id).asLiveData()

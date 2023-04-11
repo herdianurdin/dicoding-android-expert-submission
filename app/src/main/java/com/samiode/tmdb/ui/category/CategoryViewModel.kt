@@ -3,8 +3,8 @@ package com.samiode.tmdb.ui.category
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.asLiveData
-import com.samiode.tmdb.domain.model.Movie
-import com.samiode.tmdb.domain.usecase.MovieUseCase
+import com.samiode.core.domain.model.Movie
+import com.samiode.core.domain.usecase.MovieUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
 import javax.inject.Inject
 

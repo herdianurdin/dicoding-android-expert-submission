@@ -22,7 +22,7 @@
             android:layout_gravity="end"
             android:layout_marginEnd="16dp"
             android:src="@drawable/tmdb"
-            android:contentDescription="@string/app_name" />
+            tools:ignore="ContentDescription" />
     </androidx.appcompat.widget.Toolbar>
     <ScrollView
         android:layout_width="match_parent"
@@ -50,8 +50,8 @@
                     android:id="@+id/iv_backdrop"
                     android:layout_width="0dp"
                     android:layout_height="0dp"
-                    android:contentDescription="@string/app_name"
                     android:scaleType="centerCrop"
+                    android:contentDescription="@string/backdrop"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -72,11 +72,11 @@
                     android:layout_height="240dp"
                     android:layout_marginTop="24dp"
                     android:scaleType="centerCrop"
-                    android:contentDescription="@string/app_name"
-                    tools:src="@tools:sample/avatars"
+                    android:contentDescription="@string/poster"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toTopOf="parent"/>
+                    app:layout_constraintTop_toTopOf="parent"
+                    tools:src="@tools:sample/avatars"/>
                 <TextView
                     android:id="@+id/tv_title"
                     android:layout_width="match_parent"
@@ -105,12 +105,12 @@
                         android:layout_height="16dp"
                         android:adjustViewBounds="true"
                         android:src="@drawable/rating_0"
-                        android:contentDescription="@string/app_name"
+                        android:contentDescription="@string/rating"
                         app:layout_constraintHorizontal_chainStyle="packed"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintEnd_toStartOf="@id/tv_rating"
                         app:layout_constraintTop_toTopOf="parent"
-                        app:layout_constraintBottom_toBottomOf="parent"/>
+                        app:layout_constraintBottom_toBottomOf="parent" />
 
                     <TextView
                         android:id="@+id/tv_rating"
@@ -207,7 +207,7 @@
             </androidx.constraintlayout.widget.ConstraintLayout>
 
             <androidx.constraintlayout.widget.ConstraintLayout
-                android:id="@+id/cl_related_movies"
+                android:id="@+id/cl_recommendation_movies"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="8dp"
@@ -215,11 +215,11 @@
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintTop_toBottomOf="@id/cl_cast">
                 <TextView
-                    android:id="@+id/tv_title_related_movies"
+                    android:id="@+id/tv_title_recommendation_movies"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginHorizontal="16dp"
-                    android:text="@string/related_movies"
+                    android:text="@string/recommendation"
                     android:textStyle="bold"
                     android:textSize="20sp"
                     android:textColor="@color/dracula"
@@ -227,7 +227,7 @@
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent" />
                 <androidx.recyclerview.widget.RecyclerView
-                    android:id="@+id/rv_related_movies"
+                    android:id="@+id/rv_recommendation_movies"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:paddingStart="16dp"
@@ -241,17 +241,17 @@
                     app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_title_related_movies"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_recommendation_movies"
                     tools:itemCount="5"
                     tools:listitem="@layout/card_movie_horizontal"/>
 
                 <com.facebook.shimmer.ShimmerFrameLayout
-                    android:id="@+id/sfl_related_movies"
+                    android:id="@+id/sfl_recommendation_movies"
                     android:layout_width="match_parent"
                     android:layout_height="240dp"
                     app:layout_constraintStart_toStartOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
-                    app:layout_constraintTop_toBottomOf="@id/tv_title_related_movies"
+                    app:layout_constraintTop_toBottomOf="@id/tv_title_recommendation_movies"
                     app:layout_constraintBottom_toBottomOf="parent">
                     <View
                         android:layout_width="match_parent"

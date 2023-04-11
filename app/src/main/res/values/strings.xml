@@ -5,9 +5,9 @@
     <string name="trending">Trending</string>
     <string name="upcoming">Upcoming</string>
     <string name="popular">Popular</string>
+    <string name="recommendation">Recommendation</string>
     <string name="overview">Overview</string>
     <string name="cast">Cast</string>
-    <string name="related_movies">Related Movies</string>
     <string name="search">Search</string>
     <string name="search_hint">Search movie…</string>
     <string name="favorite">Favorite</string>
@@ -18,4 +18,6 @@
     <string name="search_not_found">The movie you are looking for was not found…</string>
     <string name="see_more">See more</string>
     <string name="retry">Retry</string>
+    <string name="title_favorite">Favorite</string>
+    <string name="backdrop">Backdrop</string>
 </resources>
