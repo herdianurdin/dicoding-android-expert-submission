@@ -29,7 +29,6 @@ class FavoriteActivity : AppCompatActivity() {
 
     @Inject
     lateinit var factory: ViewModelFactory
-
     private val favoriteViewModel: FavoriteViewModel by viewModels { factory }
 
     override fun onCreate(savedInstanceState: Bundle?) {
