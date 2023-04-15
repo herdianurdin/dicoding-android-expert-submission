@@ -50,6 +50,7 @@ class SearchActivity : AppCompatActivity() {
         val searchView = searchItem.actionView as SearchView
 
         searchItem.expandActionView()
+        searchView.maxWidth = Integer.MAX_VALUE
         searchView.queryHint = getString(R.string.search_hint)
 
         searchView.setOnQueryTextListener(object: SearchView.OnQueryTextListener {
