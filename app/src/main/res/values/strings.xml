@@ -15,7 +15,6 @@
     <string name="message_error_no_data">There is no data…</string>
     <string name="message_error_occurred">An error occurred.</string>
     <string name="toast_error_occurred">Error occurred</string>
-    <string name="search_not_found">The movie you are looking for was not found…</string>
     <string name="see_more">See more</string>
     <string name="retry">Retry</string>
     <string name="title_favorite">Favorite</string>

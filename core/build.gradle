@@ -1,9 +1,9 @@
 plugins {
     id 'com.android.library'
     id 'org.jetbrains.kotlin.android'
-    id 'kotlin-kapt'
     id "kotlin-parcelize"
     id 'com.google.dagger.hilt.android'
+    id 'kotlin-kapt'
 }
 
 android {
@@ -23,11 +23,16 @@ android {
         buildConfigField 'String', 'API_KEY', "\"${properties['API_KEY']}\""
         buildConfigField 'String', 'API_BASE_URL', "\"${properties['API_BASE_URL']}\""
         buildConfigField 'String', 'API_IMG_ENDPOINT', "\"${properties['API_IMG_ENDPOINT']}\""
+        buildConfigField 'String', 'API_HOSTNAME', "\"${properties['API_HOSTNAME']}\""
     }
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+        debug {
+            minifyEnabled true
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
         }
     }
@@ -51,15 +56,6 @@ apply from: '../shared_dependencies.gradle'
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
 
-    // Android KTX
-    implementation 'androidx.core:core-ktx:1.10.0'
-
-    // Base Android
-    implementation 'androidx.appcompat:appcompat:1.6.1'
-
-    // Material Design
-    implementation 'com.google.android.material:material:1.8.0'
-
     // Retrofit
     implementation 'com.squareup.retrofit2:retrofit:2.9.0'
     implementation "com.squareup.retrofit2:converter-gson:2.9.0"
@@ -71,10 +67,9 @@ dependencies {
     annotationProcessor "androidx.room:room-compiler:2.5.1"
     kapt "androidx.room:room-compiler:2.5.1"
 
-    // Testing
-    testImplementation 'junit:junit:4.13.2'
-    androidTestImplementation 'androidx.test.ext:junit:1.1.5'
-    androidTestImplementation 'androidx.test.espresso:espresso-core:3.5.1'
+    // SQL Cipher
+    implementation "net.zetetic:android-database-sqlcipher:4.4.0"
+    implementation "androidx.sqlite:sqlite-ktx:2.3.1"
 }
 
 configurations {

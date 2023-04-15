@@ -8,9 +8,7 @@ import com.samiode.core.domain.model.Cast
 import com.samiode.core.domain.model.Movie
 import com.samiode.core.domain.usecase.MovieUseCase
 import dagger.hilt.android.lifecycle.HiltViewModel
-import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
-import kotlinx.coroutines.withContext
 import javax.inject.Inject
 
 @HiltViewModel
@@ -26,17 +24,13 @@ class DetailViewModel @Inject constructor(private val movieUseCase: MovieUseCase
 
     fun putMovieAsFavorite(movie: Movie) {
         viewModelScope.launch {
-            withContext(Dispatchers.IO) {
-                movieUseCase.putMovieAsFavorite(movie)
-            }
+            movieUseCase.putMovieAsFavorite(movie)
         }
     }
 
     fun removeMovieFromFavorite(id: Int) {
         viewModelScope.launch {
-            withContext(Dispatchers.IO) {
-                movieUseCase.removeMovieFromFavorite(id)
-            }
+            movieUseCase.removeMovieFromFavorite(id)
         }
     }
 }
